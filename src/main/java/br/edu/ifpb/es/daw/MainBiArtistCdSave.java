@@ -9,6 +9,7 @@ import br.edu.ifpb.es.daw.entities.bidirecional.CD;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class MainBiArtistCdSave {
@@ -29,6 +30,7 @@ public class MainBiArtistCdSave {
 			CD cd = new CD();
 			cd.setTitle("Título do CD");
 			cd.setPrice(25.0f);
+			cd.setCreationDate(LocalDateTime.now());
 			cd.setDescription("Descrição do CD " + System.nanoTime());
 			cd.setCreatedByArtists(new ArrayList<Artist>());
 

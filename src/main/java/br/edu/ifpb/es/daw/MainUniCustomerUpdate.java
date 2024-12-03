@@ -19,7 +19,7 @@ public class MainUniCustomerUpdate {
 			customer.setFirstName("João");
 			customer.setLastName("Silva");
 			customer.setPhoneNumber("(83) 1234 5678");
-			customer.setEmail("joao.silva80@email.com");
+			customer.setEmail(String.format("joao.silva%d@email.com", System.nanoTime()));
 			Address address = new Address();
 			address.setStreet1("street1");
 			address.setStreet2("street2");

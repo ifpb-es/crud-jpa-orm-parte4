@@ -1,0 +1,24 @@
+package br.edu.ifpb.es.daw;
+
+import br.edu.ifpb.es.daw.dao.bidirecional.CustomerDAO;
+import br.edu.ifpb.es.daw.dao.bidirecional.impl.CustomerDAOImpl;
+import br.edu.ifpb.es.daw.entities.bidirecional.Customer;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+
+import java.util.List;
+
+public class MainBiCustomerDeleteAll {
+
+	public static void main(String[] args) throws DawException {
+		try(EntityManagerFactory emf = Persistence.createEntityManagerFactory("daw")) {
+			CustomerDAO dao = new CustomerDAOImpl(emf);
+
+			List<Customer> customers = dao.getAll();
+			for (Customer customer : customers) {
+				dao.delete(customer.getId());
+			}
+		}
+	}
+
+}

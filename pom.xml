@@ -44,6 +44,10 @@
 	<build>
 		<plugins>
 			<plugin>
+				<!-- Repackages the project classes together with their dependencies into a single uber-jar,
+					optionally renaming classes or removing unused classes.
+					Referência: https://maven.apache.org/plugins/maven-shade-plugin/
+				-->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
 				<version>${maven.shade.plugin.version}</version>
